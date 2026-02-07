@@ -1,0 +1,47 @@
+/* ============ 变量 ============ */
+:root {
+    --bg-main: #0e0e0e;
+    --bg-section: #1a1a1a;
+    --bg-panel: #222222;
+    --border-dark: #2e2e2e;
+
+    --gold-main: #c9a063;
+    --gold-bright: #f5c36a;
+    --red-fire: #8b2e2e;
+    --red-dark: #5a1f1f;
+
+    --blue-ice: #4aa3b5;
+    --blue-dark: #2c6f73;
+
+    --text-title: #f2e6c8;
+    --text-main: #d1d1d1;
+    --text-secondary: #9a9a9a;
+    --text-disabled: #6a6a6a;
+}
+
+/* ============ reset ============ */
+html, body {
+    height: 100%;
+    overflow: auto;
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+/* demo video 通用 */
+#demoMain video{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}

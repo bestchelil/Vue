@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>传奇珐玛大陆 · 移动端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b0b">
+
+  <!-- 复用你现有的变量/重置（保持同一套“暗黑+金色”配色体系） -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+
+<!-- ================= 顶部导航 ================= -->
+<header class="top-nav">
+  <div class="nav-inner">
+    <div class="logo">传奇珐玛大陆</div>
+
+    <div class="nav-actions">
+      <button class="btn-start btn-start--mini" id="btnStart" aria-label="开始游戏">
+        <span>开始</span>
+      </button>
+
+      <button class="nav-toggle" id="navToggle" aria-label="打开菜单">
+        <div class="bars"><span></span></div>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- 抽屉遮罩 -->
+<div class="drawer-mask" id="drawerMask" aria-hidden="true"></div>
+
+<!-- 顶部抽屉菜单 -->
+<nav class="mobile-drawer" id="mobileDrawer" aria-label="页面导航">
+  <div class="drawer-inner">
+    <div class="drawer-panel">
+      <div class="drawer-title">导航</div>
+      <div class="menu">
+        <a data-target="home" data-en="HOME" class="active"><span>首页</span><em>HOME</em></a>
+        <a data-target="roles" data-en="ROLES"><span>角色</span><em>ROLES</em></a>
+        <a data-target="news" data-en="NEWS"><span>资讯</span><em>NEWS</em></a>
+        <a data-target="demo" data-en="DEMO"><span>实机</span><em>DEMO</em></a>
+        <a data-target="contact" data-en="CONTACT"><span>联系我们</span><em>CONTACT</em></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= 主体内容 ================= -->
+<main class="m-container">
+
+  <!-- HOME -->
+  <section class="m-section home" id="home">
+    <div class="home-hero">
+      <h1 class="game-title">传奇珐玛大陆</h1>
+      <p class="game-subtitle">S4 赛季 · 起源（占位）</p>
+      <p class="game-desc">9 月 25 日开启 · 这里放一句核心卖点文案（占位）</p>
+
+      <div class="home-cta">
+        <button class="btn-download" id="btnStart1">开始游戏</button>
+        <span class="download-tip">支持 Windows / Android</span>
+      </div>
+
+      <div class="quick-grid" aria-label="核心信息">
+        <div class="quick-item">
+          <strong>版本</strong>
+          <span>新赛季 · 起源（占位）</span>
+        </div>
+        <div class="quick-item">
+          <strong>开服</strong>
+          <span>09/25 · 20:00（占位）</span>
+        </div>
+        <div class="quick-item">
+          <strong>福利</strong>
+          <span>登录送礼 · 限时称号（占位）</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="m-section roles" id="roles">
+    <header class="section-head">
+      <div class="section-kicker">ROLES</div>
+      <div class="section-title">角色展示</div>
+    </header>
+
+    <div class="roles-inner">
+      <div class="roles-stage">
+        <div class="role-image" aria-label="角色大图"></div>
+      </div>
+
+      <aside class="roles-info">
+        <h2 class="role-name">角色名</h2>
+        <ul class="role-meta"></ul>
+        <p class="role-desc">这里是角色特色描述文字，占位用。可多行，可替换。</p>
+
+        <button class="role-detail-btn" id="roleDetailBtn">攻击演示</button>
+
+        <div class="divider"></div>
+        <div class="section-kicker">切换角色</div>
+        <div class="roles-selector" id="rolesSelector"></div>
+      </aside>
+    </div>
+
+    <!-- 悬浮播放层（手机：点击弹出） -->
+    <div class="role-preview" id="rolePreview" aria-hidden="true">
+      <button class="preview-close" id="previewClose" aria-label="关闭">×</button>
+      <video id="rolePreviewVideo" muted playsinline loop preload="none"></video>
+      <div class="role-preview-mask"></div>
+      <div class="role-preview-title">攻击演示</div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="m-section news" id="news">
+    <header class="section-head">
+      <div class="section-kicker">NEWS</div>
+      <div class="section-title">最新资讯</div>
+    </header>
+
+    <div class="news-inner">
+      <article class="news-feature">
+        <div class="news-cover" id="newsCover">
+          <div class="news-cover-image" id="newsCoverImage"></div>
+          <video class="news-cover-video" id="newsCoverVideo" muted playsinline loop preload="none"></video>
+        </div>
+
+        <div class="news-content">
+          <span class="news-tag"></span>
+          <h2 class="news-title"></h2>
+          <p class="news-summary"></p>
+          <time class="news-date"></time>
+        </div>
+      </article>
+
+      <aside class="news-list">
+        <h3 class="news-list-title">资讯列表</h3>
+        <ul id="newsList"></ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section class="m-section demo" id="demo">
+    <header class="section-head">
+      <div class="section-kicker">DEMO</div>
+      <div class="section-title">实机演示</div>
+    </header>
+
+    <div class="demo-inner">
+      <div class="demo-main" id="demoMain">
+        <video id="demoVideo" muted playsinline controls preload="metadata" poster="images/demo/demo_poster1.jpg"></video>
+      </div>
+
+      <div class="section-kicker">切换片段</div>
+      <div class="demo-thumbs" aria-label="演示缩略图">
+        <button class="demo-thumb active" data-index="0" aria-label="演示1"></button>
+        <button class="demo-thumb" data-index="1" aria-label="演示2"></button>
+        <button class="demo-thumb" data-index="2" aria-label="演示3"></button>
+        <button class="demo-thumb" data-index="3" aria-label="演示4"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="m-section contact" id="contact">
+    <header class="section-head">
+      <div class="section-kicker">CONTACT</div>
+      <div class="section-title">联系我们</div>
+    </header>
+
+    <div class="m-card m-card--pad contact-card">
+      <p>客服邮箱：support@example.com</p>
+      <p>官方QQ群：123456789</p>
+      <p>商务合作：bd@example.com</p>
+
+      <footer class="tencent-footer">
+        <p>COPYRIGHT © 1998 - 2025 CHUANQI. ALL RIGHTS RESERVED.</p>
+        <p>粤网文〔2024〕1234-567号 | 全国文化市场统一举报电话：12318</p>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<!-- 预览弹层遮罩（角色演示等） -->
+<div class="m-modal-mask" id="modalMask" aria-hidden="true"></div>
+
+<!-- 悬浮开始 -->
+<button class="m-fab btn-start" id="btnStartFab" aria-label="开始游戏">
+  <span>开始</span>
+</button>
+
+<script src="js/mobile.js"></script>
+</body>
+</html>

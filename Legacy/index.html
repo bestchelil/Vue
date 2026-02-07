@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <script>
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            location.replace("m.html");
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>游戏官网</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<!-- ================= 顶部导航 ================= -->
+<header class="top-nav">
+    <div class="nav-inner">
+        <div class="logo">传奇珐玛大陆</div>
+
+        <nav class="menu">
+            <a data-target="home" data-en="HOME" class="active">首页</a>
+            <a data-target="roles" data-en="ROLES">角色</a>
+            <a data-target="news" data-en="NEWS">资讯</a>
+            <a data-target="demo" data-en="DEMO">实机</a>
+            <a data-target="contact" data-en="CONTACT">联系我们</a>
+        </nav>
+
+        <div class="actions">
+            <button class="btn-start" id="btnStart"><span>开始游戏</span></button>
+            <span class="login">欢迎游玩</span>
+        </div>
+    </div>
+</header>
+
+<!-- ================= 一屏一页内容 ================= -->
+<main class="snap-container">
+
+    <section class="snap-section home" id="home">
+        <div class="home-inner">
+
+            <!-- 主标题区 -->
+            <div class="home-content">
+                <h1 class="game-title">传奇珐玛大陆</h1>
+
+                <p class="game-subtitle">
+                    S4 赛季 · 起源（占位）
+                </p>
+
+                <p class="game-desc">
+                    9 月 25 日开启 · 这里放一句核心卖点文案（占位）
+                </p>
+            </div>
+
+            <!-- 行为按钮区 -->
+            <div class="home-actions">
+                <button class="btn-download" id="btnStart1">
+                    开始游戏
+                </button>
+                <p class="download-tip">
+                    支持 Windows / Android
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="snap-section roles" id="roles">
+        <div class="roles-inner">
+
+            <!-- 背景大图层（会铺满整屏） -->
+            <div class="roles-stage">
+                <div class="role-image">当前角色图片占位</div>
+            </div>
+
+            <!-- 右侧角色信息（前景层） -->
+            <aside class="roles-info">
+                <h2 class="role-name">角色名（占位）</h2>
+
+                <ul class="role-meta">
+                    <li>品级：勇者（占位）</li>
+                    <li>标签：爆发 / 机动（占位）</li>
+                    <li>上线时间：2025-01-01（占位）</li>
+                </ul>
+
+                <p class="role-desc">
+                    这里是角色特色描述文字，占位用。可多行，可替换。
+                </p>
+
+                <button class="role-detail-btn">查看详情</button>
+                <!-- 悬浮播放层 -->
+                <div class="role-preview" id="rolePreview">
+                    <video id="rolePreviewVideo" muted playsinline loop preload="none"></video>
+                    <div class="role-preview-mask"></div>
+                    <div class="role-preview-title">攻击演示</div>
+                </div>
+            </aside>
+
+            <!-- 底部角色泡泡（前景层） -->
+            <div class="roles-selector" id="rolesSelector"></div>
+        </div>
+    </section>
+
+
+    <section class="snap-section news" id="news">
+        <div class="news-inner">
+
+            <!-- 左侧主推资讯 -->
+            <article class="news-feature">
+
+                <div class="news-cover" id="newsCover">
+                    <div class="news-cover-image" id="newsCoverImage"></div>
+
+                    <video class="news-cover-video"
+                           id="newsCoverVideo"
+                           muted
+                           playsinline
+                           loop
+                           preload="none"></video>
+                </div>
+
+                <div class="news-content">
+                    <span class="news-tag"></span>
+                    <h2 class="news-title"></h2>
+                    <p class="news-summary"></p>
+                    <time class="news-date"></time>
+                </div>
+
+            </article>
+
+            <!-- 右侧资讯列表 -->
+            <aside class="news-list">
+                <h3 class="news-list-title">最新资讯</h3>
+                <ul id="newsList"></ul>
+            </aside>
+
+        </div>
+    </section>
+
+
+
+    <section class="snap-section demo" id="demo">
+        <div class="demo-inner">
+
+            <!-- 页面标题 -->
+            <header class="demo-header">
+                <h2 class="demo-title">实机演示</h2>
+                <p class="demo-subtitle">真实画面 · 即时战斗 · 操作展示（占位）</p>
+            </header>
+
+            <!-- 主演示区 -->
+            <div class="demo-stage">
+                <div class="demo-main" id="demoMain">
+                    <video id="demoVideo"
+                           muted
+                           playsinline
+                           controls
+                           preload="metadata"
+                           poster="images/demo/demo_poster1.jpg">
+                    </video>
+                </div>
+            </div>
+
+            <!-- 素材缩略列表 -->
+            <div class="demo-thumbs">
+                <button class="demo-thumb active" data-index="0" aria-label="演示1"></button>
+                <button class="demo-thumb" data-index="1" aria-label="演示2"></button>
+                <button class="demo-thumb" data-index="2" aria-label="演示3"></button>
+                <button class="demo-thumb" data-index="3" aria-label="演示4"></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="snap-section contact" id="contact">
+
+        <!-- 联系我们 -->
+        <div class="contact-content">
+            <h2 class="contact-title">联系我们</h2>
+            <p>客服邮箱：support@example.com</p>
+            <p>官方QQ群：123456789</p>
+            <p>商务合作：bd@example.com</p>
+        </div>
+
+        <div class="contact-ornament"></div>
+
+        <!-- Footer -->
+        <footer class="tencent-footer">
+            <p>COPYRIGHT © 1998 - 2025 CHUANQI. ALL RIGHTS RESERVED.</p>
+            <p>粤网文〔2024〕1234-567号 | 全国文化市场统一举报电话：12318</p>
+        </footer>
+
+    </section>
+
+</main>
+
+<!-- 向下滑动提示 -->
+<div class="scroll-hint">
+    <span>向下滑动</span>
+    <i class="arrow"></i>
+    <span>更精彩</span>
+</div>
+
+
+<script src="js/scroll.js"></script>
+</body>
+</html>
+
+
+<script>
+    const startUrl = "https://ml.996box.com/biyingjj?msclkid=cf4201ede6d6174d46e468a681e46b5a";
+
+    function goToStartPage() {
+        window.location.href = startUrl;
+    }
+
+    ["btnStart", "btnStart1"].forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) btn.addEventListener("click", goToStartPage);
+    });
+</script>
+
